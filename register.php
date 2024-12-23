@@ -2,6 +2,9 @@
 // Mengimpor file koneksi untuk menghubungkan ke database
 include 'koneksi.php';
 
+// Variabel untuk menandai apakah registrasi berhasil
+$success = false;
+
 // Mengecek apakah request menggunakan metode POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Mengambil data input dari form
@@ -24,8 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Menjalankan query dan mengecek apakah berhasil
         if ($stmt->execute()) {
-            header('Location: login.php'); // Redirect ke halaman login jika registrasi berhasil
-            exit;
+            $success = true; // Menandai bahwa registrasi berhasil
         } else {
             $error = 'Gagal registrasi'; // Menampilkan error jika registrasi gagal
         }
@@ -123,6 +125,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 alert('Passwords do not match!'); // Menampilkan alert jika password tidak cocok
             }
         });
+
+        <?php if ($success): ?>
+        // Menampilkan notifikasi jika registrasi berhasil
+        alert('Pendaftaran Berhasil, Silahkan Login.');
+        window.location.href = 'login.php'; // Redirect ke halaman login
+        <?php endif; ?>
     </script>
 </body>
 </html>
