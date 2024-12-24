@@ -1,5 +1,9 @@
 <?php
-session_start(); // Memulai sesi untuk menyimpan data pengguna
+session_start([
+    'cookie_httponly' => true,
+    'cookie_secure' => true,
+    'cookie_samesite' => 'Strict',
+]); // Memulai sesi untuk menyimpan data pengguna
 include 'koneksi.php'; // Menghubungkan ke file koneksi database
 
 // Memeriksa apakah form login dikirim dengan metode POST
