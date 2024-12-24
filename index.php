@@ -1,6 +1,10 @@
 <?php
 // Memulai sesi untuk mengelola data pengguna yang login
-session_start();
+session_start([
+    'cookie_httponly' => true,
+    'cookie_secure' => true,
+    'cookie_samesite' => 'Strict',
+]);
 
 // Mengimpor file koneksi ke database
 include 'koneksi.php';
