@@ -77,9 +77,13 @@
    - SSL Certificate: Pastikan menggunakan HTTPS dengan menginstal SSL untuk mengenkripsi data yang dikirim antara server dan klien.
    - menggunakan prepare statement untuk mencegah serangan seperti SQL Injection.
      
-     ![image](https://github.com/user-attachments/assets/2d0524da-d31f-4023-9164-92f40fd8d326)
+![image](https://github.com/user-attachments/assets/2d0524da-d31f-4023-9164-92f40fd8d326)
 
    - Atur izin file dan folder dengan benar agar tidak memberikan akses ke folder yg bersifat privat.
+   - menggunakan cookie pada session unutk menghindari XSS, CSRF atau transportasi HTTP
+     
+![image](https://github.com/user-attachments/assets/a865a503-51fa-4db3-80a6-e9ef4f4c3f27)
+
      
 
 **+ Konfigurasi server untuk mendukung aplikasi web.**
