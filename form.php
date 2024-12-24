@@ -1,7 +1,10 @@
 <?php
 // Memulai session untuk menjaga autentikasi pengguna
-session_start();
-
+session_start([
+    'cookie_httponly' => true,
+    'cookie_secure' => true,
+    'cookie_samesite' => 'Strict',
+]);
 // Menyertakan file koneksi ke database
 include 'koneksi.php';
 
